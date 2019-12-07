@@ -1,0 +1,44 @@
+<h1>
+  Edit collaborator #<%= @collaborator.id %>
+</h1>
+
+<hr>
+
+<!-- Form collaborator start -->
+<form action="/update_collaborator/<%= @collaborator.id %>" method="post">
+<!-- Form collaborator end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @collaborator.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for project_id start -->
+  <div class="form-group">
+    <label for="project_id">
+      Project
+    </label>
+
+    <!-- Input for project_id start -->
+    <input type="text" id="project_id" name="project_id" class="form-control" value="<%= @collaborator.project_id %>">
+    <!-- Input for project_id end -->
+  </div>
+  <!-- Label and input for project_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update collaborator
+  </button>
+</form>
+
+<hr>
+
+<a href="/collaborators">
+  Go back
+</a>

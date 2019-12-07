@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Collaborator resource:
+
+  # CREATE
+  get("/collaborators/new", { :controller => "collaborators", :action => "new_form" })
+  post("/create_collaborator", { :controller => "collaborators", :action => "create_row" })
+
+  # READ
+  get("/collaborators", { :controller => "collaborators", :action => "index" })
+  get("/collaborators/:id_to_display", { :controller => "collaborators", :action => "show" })
+
+  # UPDATE
+  get("/collaborators/:prefill_with_id/edit", { :controller => "collaborators", :action => "edit_form" })
+  post("/update_collaborator/:id_to_modify", { :controller => "collaborators", :action => "update_row" })
+
+  # DELETE
+  get("/delete_collaborator/:id_to_remove", { :controller => "collaborators", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Bug resource:
 
   # CREATE

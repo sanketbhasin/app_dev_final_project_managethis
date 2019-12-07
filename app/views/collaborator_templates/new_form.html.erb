@@ -1,0 +1,45 @@
+<h1>
+  Add a new collaborator
+</h1>
+
+
+<hr>
+
+<!-- Form collaborator start -->
+<form action="/create_collaborator" method="post">
+<!-- Form collaborator end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for project_id start -->
+  <div class="form-group">
+    <label for="project_id">
+      Project
+    </label>
+
+    <!-- Input for project_id start -->
+    <input type="text" id="project_id" name="project_id" class="form-control">
+    <!-- Input for project_id end -->
+  </div>
+  <!-- Label and input for project_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create collaborator
+  </button>
+</form>
+
+<hr>
+
+<a href="/collaborators">
+  Go back
+</a>
