@@ -1,4 +1,6 @@
 ActiveAdmin.register Bug do
+
+ permit_params :project_id, :title, :description, :deadline, :image_of_bug, :status
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
