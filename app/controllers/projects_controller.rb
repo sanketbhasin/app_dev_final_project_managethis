@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
   def update_row
     @project = Project.find(params.fetch("id_to_modify"))
 
-    @project.user_id = params.fetch("user_id")
+    
 
     if @project.valid?
       @project.save
