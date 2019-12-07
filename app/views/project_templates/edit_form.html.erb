@@ -1,0 +1,32 @@
+<h1>
+  Edit project #<%= @project.id %>
+</h1>
+
+<hr>
+
+<!-- Form project start -->
+<form action="/update_project/<%= @project.id %>" method="post">
+<!-- Form project end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @project.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update project
+  </button>
+</form>
+
+<hr>
+
+<a href="/projects">
+  Go back
+</a>
