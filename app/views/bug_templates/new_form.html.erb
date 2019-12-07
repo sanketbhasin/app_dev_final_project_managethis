@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for project_id start -->
-    <input type="text" id="project_id" name="project_id" class="form-control">
+    <%= select_tag(:project_id, options_from_collection_for_select(Project.all, :id, :user_id, @bug.project_id), :class => "form-control") %>
     <!-- Input for project_id end -->
   </div>
   <!-- Label and input for project_id end -->
