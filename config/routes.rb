@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Bug resource:
+
+  # CREATE
+  get("/bugs/new", { :controller => "bugs", :action => "new_form" })
+  post("/create_bug", { :controller => "bugs", :action => "create_row" })
+
+  # READ
+  get("/bugs", { :controller => "bugs", :action => "index" })
+  get("/bugs/:id_to_display", { :controller => "bugs", :action => "show" })
+
+  # UPDATE
+  get("/bugs/:prefill_with_id/edit", { :controller => "bugs", :action => "edit_form" })
+  post("/update_bug/:id_to_modify", { :controller => "bugs", :action => "update_row" })
+
+  # DELETE
+  get("/delete_bug/:id_to_remove", { :controller => "bugs", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Project resource:
 
   # CREATE

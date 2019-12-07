@@ -1,0 +1,109 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Bug #<%= @bug.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/bugs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link bug start -->
+      <div class="col">
+        <a href="/bugs/<%= @bug.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit bug
+        </a>
+      </div>
+      <!-- Edit link bug end -->
+
+      <!-- Delete link bug start -->
+      <div class="col">
+        <a href="/delete_bug/<%= @bug.id %>" class="btn btn-block btn-outline-secondary">
+          Delete bug
+        </a>
+      </div>
+      <!-- Delete link bug end -->
+    </div>
+
+    <dl>
+      <dt>
+        Project
+      </dt>
+      <!-- Display project_id start -->
+      <dd>
+        <%= @bug.project_id %>
+      </dd>
+      <!-- Display project_id end -->
+
+      <dt>
+        Title
+      </dt>
+      <!-- Display title start -->
+      <dd>
+        <%= @bug.title %>
+      </dd>
+      <!-- Display title end -->
+
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @bug.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        Deadline
+      </dt>
+      <!-- Display deadline start -->
+      <dd>
+        <%= @bug.deadline %>
+      </dd>
+      <!-- Display deadline end -->
+
+      <dt>
+        Image of bug
+      </dt>
+      <!-- Display image_of_bug start -->
+      <dd>
+        <%= @bug.image_of_bug %>
+      </dd>
+      <!-- Display image_of_bug end -->
+
+      <dt>
+        Status
+      </dt>
+      <!-- Display status start -->
+      <dd>
+        <%= @bug.status %>
+      </dd>
+      <!-- Display status end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@bug.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@bug.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
