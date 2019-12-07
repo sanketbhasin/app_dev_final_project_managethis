@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/collaborators/new", { :controller => "collaborators", :action => "new_form" })
   post("/create_collaborator", { :controller => "collaborators", :action => "create_row" })
+  post("/create_collaborator_from_project", { :controller => "collaborators", :action => "create_row_from_project" })
 
   # READ
   get("/collaborators", { :controller => "collaborators", :action => "index" })
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/bugs/new", { :controller => "bugs", :action => "new_form" })
   post("/create_bug", { :controller => "bugs", :action => "create_row" })
+  post("/create_bug_from_project", { :controller => "bugs", :action => "create_row_from_project" })
 
   # READ
   get("/bugs", { :controller => "bugs", :action => "index" })

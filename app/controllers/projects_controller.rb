@@ -6,6 +6,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @collaborator = Collaborator.new
+    @bug = Bug.new
     @project = Project.find(params.fetch("id_to_display"))
 
     render("project_templates/show.html.erb")

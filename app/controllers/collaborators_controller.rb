@@ -32,6 +32,21 @@ class CollaboratorsController < ApplicationController
     end
   end
 
+  def create_row_from_project
+    @collaborator = Collaborator.new
+
+    @collaborator.user_id = params.fetch("user_id")
+    @collaborator.project_id = params.fetch("project_id")
+
+    if @collaborator.valid?
+      @collaborator.save
+
+      redirect_to("/projects/#{@collaborator.project_id}", notice: "Collaborator created successfully.")
+    else
+      render("collaborator_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @collaborator = Collaborator.find(params.fetch("prefill_with_id"))
 

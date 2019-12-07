@@ -36,6 +36,25 @@ class BugsController < ApplicationController
     end
   end
 
+  def create_row_from_project
+    @bug = Bug.new
+
+    @bug.project_id = params.fetch("project_id")
+    @bug.title = params.fetch("title")
+    @bug.description = params.fetch("description")
+    @bug.deadline = params.fetch("deadline")
+    @bug.image_of_bug = params.fetch("image_of_bug")
+    @bug.status = params.fetch("status")
+
+    if @bug.valid?
+      @bug.save
+
+      redirect_to("/projects/#{@bug.project_id}", notice: "Bug created successfully.")
+    else
+      render("bug_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @bug = Bug.find(params.fetch("prefill_with_id"))
 
