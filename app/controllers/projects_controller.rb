@@ -10,7 +10,8 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.page(params[:page]).per(10)
+    @q = Project.ransack(params[:q])
+    @projects = @q.result(:distinct => true).includes(:user, :bugs, :collaborators, :users).page(params[:page]).per(10)
 
     render("project_templates/index.html.erb")
   end

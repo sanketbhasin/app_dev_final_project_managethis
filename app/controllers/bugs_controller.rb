@@ -1,6 +1,7 @@
 class BugsController < ApplicationController
   def index
-    @bugs = Bug.page(params[:page]).per(10)
+    @q = Bug.ransack(params[:q])
+    @bugs = @q.result(:distinct => true).includes(:project).page(params[:page]).per(10)
 
     render("bug_templates/index.html.erb")
   end
