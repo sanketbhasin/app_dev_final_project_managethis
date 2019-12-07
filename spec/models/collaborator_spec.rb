@@ -4,6 +4,8 @@ RSpec.describe Collaborator, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:project) }
+
     it { should belong_to(:user) }
 
     end
