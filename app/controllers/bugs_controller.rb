@@ -61,6 +61,14 @@ class BugsController < ApplicationController
     end
   end
 
+  def destroy_row_from_project
+    @bug = Bug.find(params.fetch("id_to_remove"))
+
+    @bug.destroy
+
+    redirect_to("/projects/#{@bug.project_id}", notice: "Bug deleted successfully.")
+  end
+
   def destroy_row
     @bug = Bug.find(params.fetch("id_to_remove"))
 

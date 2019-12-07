@@ -51,6 +51,14 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @project = Project.find(params.fetch("id_to_remove"))
+
+    @project.destroy
+
+    redirect_to("/users/#{@project.user_id}", notice: "Project deleted successfully.")
+  end
+
   def destroy_row
     @project = Project.find(params.fetch("id_to_remove"))
 

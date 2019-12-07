@@ -53,6 +53,22 @@ class CollaboratorsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @collaborator = Collaborator.find(params.fetch("id_to_remove"))
+
+    @collaborator.destroy
+
+    redirect_to("/users/#{@collaborator.user_id}", notice: "Collaborator deleted successfully.")
+  end
+
+  def destroy_row_from_project
+    @collaborator = Collaborator.find(params.fetch("id_to_remove"))
+
+    @collaborator.destroy
+
+    redirect_to("/projects/#{@collaborator.project_id}", notice: "Collaborator deleted successfully.")
+  end
+
   def destroy_row
     @collaborator = Collaborator.find(params.fetch("id_to_remove"))
 

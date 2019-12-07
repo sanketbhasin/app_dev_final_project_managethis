@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_collaborator/:id_to_remove", { :controller => "collaborators", :action => "destroy_row" })
+  get("/delete_collaborator_from_project/:id_to_remove", { :controller => "collaborators", :action => "destroy_row_from_project" })
+  get("/delete_collaborator_from_user/:id_to_remove", { :controller => "collaborators", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -37,6 +39,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_bug/:id_to_remove", { :controller => "bugs", :action => "destroy_row" })
+  get("/delete_bug_from_project/:id_to_remove", { :controller => "bugs", :action => "destroy_row_from_project" })
 
   #------------------------------
 
@@ -56,6 +59,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_project/:id_to_remove", { :controller => "projects", :action => "destroy_row" })
+  get("/delete_project_from_user/:id_to_remove", { :controller => "projects", :action => "destroy_row_from_user" })
 
   #------------------------------
 
