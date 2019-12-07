@@ -74,7 +74,11 @@
 
         <!-- Display bug.project_id start -->
         <td>
-          <%= bug.project.user_id %>
+          <% if bug.project.present? %>
+            <a href="/projects/<%= bug.project.id %>">
+              <%= bug.project.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display bug.project_id end -->
 

@@ -54,7 +54,11 @@
 
         <!-- Display project.user_id start -->
         <td>
-          <%= project.user.first_name %>
+          <% if project.user.present? %>
+            <a href="/users/<%= project.user.id %>">
+              <%= project.user.first_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display project.user_id end -->
 

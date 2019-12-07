@@ -58,13 +58,21 @@
 
         <!-- Display collaborator.user_id start -->
         <td>
-          <%= collaborator.user.first_name %>
+          <% if collaborator.user.present? %>
+            <a href="/users/<%= collaborator.user.id %>">
+              <%= collaborator.user.first_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display collaborator.user_id end -->
 
         <!-- Display collaborator.project_id start -->
         <td>
-          <%= collaborator.project.user_id %>
+          <% if collaborator.project.present? %>
+            <a href="/projects/<%= collaborator.project.id %>">
+              <%= collaborator.project.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display collaborator.project_id end -->
 

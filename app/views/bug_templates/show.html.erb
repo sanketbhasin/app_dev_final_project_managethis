@@ -34,7 +34,11 @@
       </dt>
       <!-- Display project_id start -->
       <dd>
-        <%= @bug.project_id %>
+        <% if @bug.project.present? %>
+          <a href="/projects/<%= @bug.project_id %>">
+            <%= @bug.project.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display project_id end -->
 
