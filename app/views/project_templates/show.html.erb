@@ -13,17 +13,21 @@
 
       <!-- Edit link project start -->
       <div class="col">
-        <a href="/projects/<%= @project.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit project
-        </a>
+        <% if current_user == @project.user %>
+          <a href="/projects/<%= @project.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit project
+          </a>
+        <% end %>
       </div>
       <!-- Edit link project end -->
 
       <!-- Delete link project start -->
       <div class="col">
-        <a href="/delete_project/<%= @project.id %>" class="btn btn-block btn-outline-secondary">
-          Delete project
-        </a>
+        <% if current_user == @project.user %>
+          <a href="/delete_project/<%= @project.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete project
+          </a>
+        <% end %>
       </div>
       <!-- Delete link project end -->
     </div>
