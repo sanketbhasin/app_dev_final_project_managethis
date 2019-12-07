@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link project start -->
       <div class="col">
         <% if current_user == @project.user %>
           <a href="/projects/<%= @project.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link project end -->
 
-      <!-- Delete link project start -->
       <div class="col">
         <% if current_user == @project.user %>
           <a href="/delete_project/<%= @project.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link project end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @project.user.present? %>
           <a href="/users/<%= @project.user_id %>">
@@ -44,30 +39,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@project.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@project.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "project_templates/project_bugs" %>
@@ -85,4 +74,3 @@
     <%= render partial: "project_templates/project_users" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

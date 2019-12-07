@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @project.bugs.each do |bug| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/bugs/<%= bug.id %>">
           <%= bug.project_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_bug_from_project/<%= bug.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="project_bugs_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "project_templates/project_bugs_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

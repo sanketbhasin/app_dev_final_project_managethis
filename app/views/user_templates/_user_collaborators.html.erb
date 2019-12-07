@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.collaborators.each do |collaborator| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/collaborators/<%= collaborator.id %>">
           <%= collaborator.created_at %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

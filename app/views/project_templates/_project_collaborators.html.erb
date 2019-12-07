@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @project.collaborators.each do |collaborator| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/collaborators/<%= collaborator.id %>">
           <%= collaborator.created_at %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_collaborator_from_project/<%= collaborator.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="project_collaborators_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "project_templates/project_collaborators_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

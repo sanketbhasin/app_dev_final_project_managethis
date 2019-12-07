@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link collaborator start -->
       <div class="col">
         <a href="/collaborators/<%= @collaborator.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit collaborator
         </a>
       </div>
-      <!-- Edit link collaborator end -->
 
-      <!-- Delete link collaborator start -->
       <div class="col">
         <a href="/delete_collaborator/<%= @collaborator.id %>" class="btn btn-block btn-outline-secondary">
           Delete collaborator
         </a>
       </div>
-      <!-- Delete link collaborator end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @collaborator.user.present? %>
           <a href="/users/<%= @collaborator.user_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Project
       </dt>
-      <!-- Display project_id start -->
       <dd>
         <% if @collaborator.project.present? %>
           <a href="/projects/<%= @collaborator.project_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display project_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@collaborator.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@collaborator.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
