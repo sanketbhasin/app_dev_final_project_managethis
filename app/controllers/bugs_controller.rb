@@ -1,6 +1,6 @@
 class BugsController < ApplicationController
   def index
-    @bugs = Bug.all
+    @bugs = Bug.page(params[:page]).per(10)
 
     render("bug_templates/index.html.erb")
   end

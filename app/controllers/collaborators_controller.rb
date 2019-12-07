@@ -1,6 +1,6 @@
 class CollaboratorsController < ApplicationController
   def index
-    @collaborators = Collaborator.all
+    @collaborators = Collaborator.page(params[:page]).per(10)
 
     render("collaborator_templates/index.html.erb")
   end
