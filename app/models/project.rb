@@ -11,6 +11,10 @@ class Project < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :collaborators,
+             :source => :user
+
   # Validations
 
 end

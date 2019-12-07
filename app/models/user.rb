@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :collab_projects,
+             :through => :collaborators,
+             :source => :project
+
   # Validations
 
   # Include default devise modules. Others available are:
